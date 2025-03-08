@@ -6,6 +6,8 @@ class Person:
         self.__age = age
         self.__gender = gender
         self.__nationality = nationality
+    #     first class, the super, and all of tis basic attribtues
+
 
     def get_attributes(self):
         return {
@@ -15,6 +17,7 @@ class Person:
             "gender":  self.__gender,
             "nationality": self.__nationality,
     }
+    # fetching/returning attributes as a dictionary
 
     def __str__(self):
         return (
@@ -24,7 +27,7 @@ class Person:
                 f"Gender: {self.__gender}\n"
                 f"Nationality: {self.__nationality}\n"
         )
-
+# returning dict as a string
 
 class Employee(Person):
     def __init__(self, firstname, lastname,gender, departament, band, ID):
@@ -35,6 +38,8 @@ class Employee(Person):
         self.__department = departament
         self.__band = band
         self.__ID = ID
+        # second, child class with the super called, attributes modified and some extra Employee attributes added
+
 
     def get_attributes(self):
         attributes = super().get_attributes()
@@ -61,7 +66,7 @@ class Customer(Person):
         self.__age = age
         self.__gender = gender
         self.__product_purchased = product_purchased
-
+    # third class, child class defined and attributes maipulated
 
     def get_attributes(self):
         attributes = super().get_attributes()

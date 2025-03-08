@@ -1,7 +1,7 @@
 from human_classes import Person
 from human_classes import Employee
 from human_classes import Customer
-
+# imporitng the relevant modules from human_classes and creating objects for each class
 human_1 = Person("Mark","Whiskers", "33", "Male","Mongolian")
 print(human_1)
 print("******************")
