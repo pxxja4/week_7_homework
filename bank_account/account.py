@@ -35,7 +35,7 @@ class Account:
 
     # overriding an inherited method
     def __str__(self):
-        return f"Bank Account holder: {self.firstname} {self._lastname}\nAccount Number : {self._account_number}\nHas balance: ${self.get_balance()}"
+        return f"Bank Account holder: {self.firstname} {self._lastname}\nAccount Number : {self._account_number}\nHas balance: ${self.get_balance():.2f}"
 
     #   behavioural methods
     def deposit(self, amount):
