@@ -4,7 +4,7 @@ from person_details.customer import Customer
 
 try:
     # Creating a Person object or Instantiation
-    person1 = Person('Chaitra', 'Boregowda', 31)
+    person1 = Person('Andy', 'Williams', 31)
     print(person1)
     print(person1.get_age())
     #print(person1.set_lastname('Tom Jerry'))
@@ -13,7 +13,11 @@ try:
     employee1 = Employee('Lisa', 'Simon',35, 'E123', 'Software Engineer')
     print(employee1)
     print("~" * 50)
-    #print(employee1.set_employee_id('123'))
+    print(employee1.get_employee_id())
+
+    employee1.set_position('Senior Engineer')
+    print(employee1)
+
 
     print("~" * 50)
     # Creating a Customer object
@@ -33,4 +37,6 @@ except Exception as ex:
     print(ex)
 
 finally:
+    # This block will always run, whether an exception occurred or not.
+    print("~" * 50)
     print("The Finally block always run")
