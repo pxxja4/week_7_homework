@@ -6,16 +6,19 @@ class Employee(Person):
       This class adds employee-specific attributes like employee ID and position,
       with validation for employee ID."""
 
-    def __init__(self, firstname, lastname, age, employee_id, position):
+    def __init__(self, firstname, lastname, age, gender, contact_number, employee_id, position):
         """ Initializes an Instance object.
         :param firstname: str - First name of the employee.
         :param lastname: str - Last name of the employee.
         :param age: int - Age of the employee.
         :param employee_id: str - Unique identifier for the employee (must start with a letter).
         :param position: str - Job position of the employee."""
-        super().__init__(firstname, lastname, age) # called the super class or base class of employee class,Initialize from Person class
+        super().__init__(firstname, lastname, age, gender, contact_number) # called the super class or base class of employee class,Initialize from Person class
 
-        # validate employee id must starts with a letter
+        # The isinstance() function is used to check if an object is an instance of a particular class,here is str
+        if not isinstance(employee_id, str):
+            raise ValueError("Employee Id must be a string")
+        # checks that the employee_id is non-empty and that its first character is an alphabet
         if not employee_id or not employee_id[0].isalpha():
             raise ValueError("Employee Id must start with an alphabet")
         self.__employee_id = employee_id  # set only once no setter for employee id ,private attribute
@@ -31,6 +34,10 @@ class Employee(Person):
         """ Gets the employee's job position.
         :return: str - Job position."""
         return self._position
+
+    def set_employee_id(self, employee_id):
+        """ Raise an error if trying to modify the employee ID."""
+        raise ValueError("Employee ID cannot be modified once set!")
 
     def set_position(self, position):
         """Sets the employee's job position.

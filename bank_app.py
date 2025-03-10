@@ -3,9 +3,10 @@ from bank_account.custom_exceptions import InsufficientFundsException
 from bank_account.savings_account import SavingsAccount
 
 try:
-    account1 = Account(500, 'A123', 'Trina', 'Thomas')
+    account1 = Account(500, 'A123456789', 'Trina', 'Thomas')
     print(account1)
     print("~" * 50)
+    #print(account1.get_account_number())
     #print(account1.get_balance())
     account1.deposit(500)
     print(account1)
@@ -14,7 +15,7 @@ try:
     #print(account1)
     print("~" * 50)
     # Creating a savings account
-    savings_acc = SavingsAccount(2000,'AS123','Lisa','Tom')
+    savings_acc = SavingsAccount(2000,'A123456789','Lisa','Tom')
     savings_acc.apply_interest()
     print(savings_acc)
 
